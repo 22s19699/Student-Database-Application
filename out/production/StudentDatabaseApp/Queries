@@ -1,0 +1,20 @@
+ 1. Create DB
+CREATE DATABASE IF NOT EXISTS StudentInformationDatabase;
+
+ 2. Use DB
+USE StudentInformationDatabase;
+
+ 3. Create table
+CREATE TABLE IF NOT EXISTS students (
+  id     INT PRIMARY KEY AUTO_INCREMENT,
+  reg_no VARCHAR(20)  NOT NULL UNIQUE,
+  name   VARCHAR(100) NOT NULL,
+  email  VARCHAR(100),
+  phone  VARCHAR(20),
+  gpa    DECIMAL(3,2)  -- keep simple; validated in code (0.00–4.00)
+);
+
+ 4.sample rows
+INSERT INTO students(reg_no,name,email,phone,gpa) VALUES
+('IT3003-001','Naduni Perera','naduni@example.com','0771234567',3.75),
+('IT3003-002','Kasun Silva',NULL,'0719876543',2.90);
